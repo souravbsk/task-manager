@@ -24,7 +24,7 @@ const router = createBrowserRouter([
       {
         path:"/updatetask/:id",
         element:<UpdateTask></UpdateTask>,
-        loader: ({params}) => fetch(`http://localhost:5000/tasks/${params.id}`)
+        loader: ({params}) => fetch(`https://mca-task-manager-server.vercel.app/tasks/${params.id}`)
       }
     ]
   },

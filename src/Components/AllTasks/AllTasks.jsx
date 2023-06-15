@@ -7,7 +7,7 @@ const AllTasks = () => {
   const [statusUpdate,setStatusUpdate] = useState(true)
 
   useEffect(() => {
-    fetch('http://localhost:5000/tasks')
+    fetch('https://mca-task-manager-server.vercel.app/tasks')
     .then(res => res.json())
     .then(data => {
       setTaskData(data)
@@ -27,7 +27,7 @@ const AllTasks = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/tasks/${id}`, {
+        fetch(`https://mca-task-manager-server.vercel.app/tasks/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -46,7 +46,7 @@ const AllTasks = () => {
   const handleStatusTask = (id,status) => {
 
  
-    fetch(`http://localhost:5000/tasks/${id}`,{
+    fetch(`https://mca-task-manager-server.vercel.app/tasks/${id}`,{
       method:"PATCH",
       headers:{
         'content-type' : "application/json",
